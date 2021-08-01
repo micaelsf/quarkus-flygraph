@@ -158,4 +158,13 @@
             </properties>
         </profile>
     </profiles>
+
+    <licenses>
+        <license>
+            <name>Apache License</name>
+            <url>https://github.com/micaelsf/quarkus-flygraph/master/LICENSE
+            </url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 </project>
