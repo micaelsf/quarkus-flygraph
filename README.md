@@ -17,7 +17,7 @@ Import quarkus-flygraph dependency in your pom.xml
 Using maven:
 
         <dependency>
-            <groupId>com.github.micaelsf</groupId>
+            <groupId>io.github.micaelsf</groupId>
             <artifactId>quarkus-flygraph</artifactId>
             <version>1.0.0</version>
         </dependency>
