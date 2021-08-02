@@ -31,7 +31,7 @@ where you want the migrations to run at (following is the default configs)
     flygraph.authentication.password=""
 
 Create this folder structure under `resources` (this path can be changed at
-application.properties using the config `flygraph.migration.path`)
+`application.properties` using the config `flygraph.migration.path`)
 
     resources
         |- db
@@ -78,7 +78,8 @@ Authentication password used to connect to the URI
 #### db/migrations (default)
 
 Migrations directory path where all migrations will be searched to be executed
-orderly. It is defined at /src/main/java/resources/<migration path>
+orderly. Path from the root of your project /src/main/java/resources/<
+migration path >
 
 ### flygraph.root.node
 
