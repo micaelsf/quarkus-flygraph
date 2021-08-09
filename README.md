@@ -19,7 +19,7 @@ Using maven:
         <dependency>
             <groupId>io.github.micaelsf</groupId>
             <artifactId>quarkus-flygraph</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
 Config your neo4j connection and credentials in you `application.properties`
