@@ -22,6 +22,19 @@ Using maven:
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
+At the moment **quarkus-flygraph** is only available as SNAPSHOT, to use it you must add this snippet to your pom.xml:
+
+    <repositories>
+        <repository>
+            <snapshots/>
+            <id>ossrh</id>
+            <name>libs-snapshot</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots
+            </url>
+        </repository>
+    </repositories>
+        
+
 Config your neo4j connection and credentials in you `application.properties`
 where you want the migrations to run at (following is the default configs)
 
