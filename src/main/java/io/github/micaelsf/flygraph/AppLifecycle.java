@@ -10,7 +10,7 @@ import javax.inject.Inject;
 @ApplicationScoped
 class AppLifecycle {
 
-    @ConfigProperty(name = "flygraph.migrate-at-start", defaultValue = "true")
+    @ConfigProperty(name = "flygraph.migration.start", defaultValue = "true")
     boolean migrateAtStart;
     @Inject
     FlyGraph flyGraph;

@@ -100,7 +100,7 @@ migration path >
 
 Migration root node id
 
-### flygraph.migrate-at-start
+### flygraph.migration.start
 
 #### true (default)
 
