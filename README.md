@@ -19,7 +19,7 @@ Using maven:
         <dependency>
             <groupId>io.github.micaelsf</groupId>
             <artifactId>quarkus-flygraph</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
 
 At the moment **quarkus-flygraph** is only available as SNAPSHOT, to use it you must add this snippet to your pom.xml:
