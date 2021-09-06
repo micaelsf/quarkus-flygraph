@@ -28,7 +28,7 @@ import static java.lang.String.format;
 @ApplicationScoped
 public class FlyGraph {
 
-    @ConfigProperty(name = "flygraph.migration.path", defaultValue = "db/migration")
+    @ConfigProperty(name = "flygraph.migration.path", defaultValue = "db/migrations")
     String migrationPath;
 
     @ConfigProperty(name = "flygraph.version.valid.houses", defaultValue = "2")
