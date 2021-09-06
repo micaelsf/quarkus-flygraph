@@ -90,11 +90,22 @@ public class Utils {
         if (!Arrays.asList("test", "prod").contains(mode))
             throw new FlygraphConfigModeException();
 
-        var env = "main";
-        if ("test".equals(mode))
-            env = ProfileManager.getActiveProfile().equals("test") ||
-                    ProfileManager.getActiveProfile().equals("localtest") ?
-                    "test" : "main";
-        return format("src/%s/resources/%s", env, migrationPath);
+        var activeProfile = ProfileManager.getActiveProfile();
+        return buildMigrationPath(migrationPath, mode, activeProfile);
+    }
+
+    protected static String buildMigrationPath(String migrationPath,
+                                               String mode,
+                                               String activeProfile) {
+        var pathPrefix = "classes";
+        if (!(activeProfile.equals("dev") || activeProfile.equals("prod"))) {
+            var env = "main";
+            if ("test".equals(mode))
+                env = activeProfile.equals("test") ||
+                        activeProfile.equals("localtest") ?
+                        "test" : "main";
+            pathPrefix = format("src/%s/resources", env);
+        }
+        return format("%s/%s", pathPrefix, migrationPath);
     }
 }

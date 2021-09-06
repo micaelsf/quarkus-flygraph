@@ -115,4 +115,25 @@ public class UtilsTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    void testBuildMigrationPath() {
+        var path = Utils.buildMigrationPath("db/migrations", "test", "test");
+        assertEquals("src/test/resources/db/migrations", path);
+
+        path = Utils.buildMigrationPath("db/migrations", "prod", "test");
+        assertEquals("src/main/resources/db/migrations", path);
+
+        path = Utils.buildMigrationPath("db/migrations", "test", "dev");
+        assertEquals("classes/db/migrations", path);
+
+        path = Utils.buildMigrationPath("db/migrations", "prod", "dev");
+        assertEquals("classes/db/migrations", path);
+
+        path = Utils.buildMigrationPath("db/migrations", "test", "prod");
+        assertEquals("classes/db/migrations", path);
+
+        path = Utils.buildMigrationPath("db/migrations", "prod", "prod");
+        assertEquals("classes/db/migrations", path);
+    }
 }
