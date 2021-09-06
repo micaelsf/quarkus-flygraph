@@ -85,7 +85,8 @@ public class Utils {
 
     protected static String getSrcMigrationPath(String migrationPath) {
         String mode = ConfigProvider.getConfig()
-                .getValue("flygraph.mode", String.class).toLowerCase();
+                .getOptionalValue("flygraph.mode", String.class)
+                .orElse("prod").toLowerCase();
         if (!Arrays.asList("test", "prod").contains(mode))
             throw new FlygraphConfigModeException();
 

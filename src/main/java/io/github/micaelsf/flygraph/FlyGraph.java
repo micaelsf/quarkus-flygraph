@@ -40,7 +40,7 @@ public class FlyGraph {
     @ConfigProperty(name = "flygraph.version.baseline", defaultValue = "1.0.0.0")
     String versionBaseline;
 
-    @ConfigProperty(name = "flygraph.root.node", defaultValue = "default")
+    @ConfigProperty(name = "flygraph.root.node", defaultValue = "root")
     String rootNode;
 
     @Inject

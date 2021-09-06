@@ -27,25 +27,29 @@ public class SessionFactoryBuilder {
     private String getUri() {
         return this.uri != null ? this.uri : ConfigProvider
                 .getConfig()
-                .getValue("flygraph.uri", String.class);
+                .getOptionalValue("flygraph.uri", String.class)
+                .orElse("bolt://localhost:7687");
     }
 
     private String getDatabase() {
         return this.database != null ? this.database : ConfigProvider
                 .getConfig()
-                .getValue("flygraph.database", String.class);
+                .getOptionalValue("flygraph.database", String.class)
+                .orElse("neo4j");
     }
 
     private String getUsername() {
         return this.username != null ? this.username : ConfigProvider
                 .getConfig()
-                .getValue("flygraph.authentication.username", String.class);
+                .getOptionalValue("flygraph.authentication.username", String.class)
+                .orElse("neo4j");
     }
 
     private String getPassword() {
         return this.password != null ? this.password : ConfigProvider
                 .getConfig()
-                .getValue("flygraph.authentication.password", String.class);
+                .getOptionalValue("flygraph.authentication.password", String.class)
+                .orElse("");
     }
 
     protected SessionFactory getSessionFactory() {
