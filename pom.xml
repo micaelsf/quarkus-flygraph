@@ -13,7 +13,7 @@
 
     <groupId>io.github.micaelsf</groupId>
     <artifactId>quarkus-flygraph</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>quarkus-flygraph</name>
     <description>Neo4j OGM migration system for quarkus applications
     </description>
