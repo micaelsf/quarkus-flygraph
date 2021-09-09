@@ -131,9 +131,9 @@ public class UtilsTest {
         assertEquals("classes/db/migrations", path);
 
         path = Utils.buildMigrationPath("db/migrations", "test", "prod");
-        assertEquals("classes/db/migrations", path);
+        assertEquals("db/migrations", path);
 
         path = Utils.buildMigrationPath("db/migrations", "prod", "prod");
-        assertEquals("classes/db/migrations", path);
+        assertEquals("db/migrations", path);
     }
 }

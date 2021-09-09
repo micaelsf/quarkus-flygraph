@@ -97,15 +97,17 @@ public class Utils {
     protected static String buildMigrationPath(String migrationPath,
                                                String mode,
                                                String activeProfile) {
-        var pathPrefix = "classes";
+        var pathPrefix = "";
         if (!(activeProfile.equals("dev") || activeProfile.equals("prod"))) {
             var env = "main";
             if ("test".equals(mode))
                 env = activeProfile.equals("test") ||
                         activeProfile.equals("localtest") ?
                         "test" : "main";
-            pathPrefix = format("src/%s/resources", env);
+            pathPrefix = format("src/%s/resources/", env);
+        } else if (activeProfile.equals("dev")) {
+            pathPrefix = "classes/";
         }
-        return format("%s/%s", pathPrefix, migrationPath);
+        return format("%s%s", pathPrefix, migrationPath);
     }
 }
