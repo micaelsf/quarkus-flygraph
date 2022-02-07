@@ -11,6 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.neo4j.ogm.session.Session;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.Map;
 import java.util.StringJoiner;
 
@@ -63,7 +64,7 @@ public class FlygraphTestT1 {
     }
 
     @Test
-    void testGetMigrationFilesOrder() {
+    void testGetMigrationFilesOrder() throws IOException {
         var migrationFiles = flyGraph.getMigrationFiles();
 
         assertTrue(migrationFiles.get(0).getName().contains("V2.0.1.1"));

@@ -15,6 +15,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -137,8 +139,15 @@ public class FlyGraph {
         return newMigrationFiles;
     }
 
-    protected List<File> getMigrationFiles() throws FlygraphMigrationFilenameException {
-        var datasetPath = getSrcMigrationPath(migrationPath);
+    protected List<File> getMigrationFiles() throws FlygraphMigrationFilenameException, IOException {
+        Enumeration<URL> resources = getClass().getClassLoader().getResources(migrationPath);
+
+        if (!resources.hasMoreElements())
+            throw new IOException();
+
+        var url = resources.nextElement();
+        var datasetPath = url.getFile();
+
         var file = new File(datasetPath);
         File[] files = file.listFiles();
         if (files == null)
